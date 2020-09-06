@@ -5,9 +5,13 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 var app = express();
 dotenv.config();
+var port = process.env.PORT;
 
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(process.env.MONGO_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
   .then(() => {
     console.log("📦DB is connected successfully!");
   })
@@ -19,7 +23,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-var port = process.env.PORT;
+var userRoute = require("./routes/User");
+
+app.use("/user", userRoute);
+
 app.listen(port, () => {
   console.log(`🚀Server is listening on ${port}`);
 });

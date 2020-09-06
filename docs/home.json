@@ -1,0 +1,5 @@
+{
+  "/": "GET: all the APIs",
+
+  "/user/signup": "POST: create account as user"
+}
