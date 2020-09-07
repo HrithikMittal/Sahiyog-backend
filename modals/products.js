@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const labPartnerSchema = new mongoose.Schema(
+const ProductSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -23,3 +23,5 @@ const labPartnerSchema = new mongoose.Schema(
     packing:String,
     image:String
 );
+var products = mongoose.model('Products',ProductSchema);
+module.exports =products;

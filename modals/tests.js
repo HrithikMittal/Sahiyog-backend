@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const testSchema = new mongoose.Schema(
+const TestSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -24,3 +24,5 @@ const testSchema = new mongoose.Schema(
       required: [true, 'A test must have a sample type']
     }
 );
+var tests = mongoose.model('Tests',TestSchema);
+module.exports =tests;

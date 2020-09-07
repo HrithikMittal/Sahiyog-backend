@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const labPartnerSchema = new mongoose.Schema(
+const LabPartnerSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -13,5 +13,7 @@ const labPartnerSchema = new mongoose.Schema(
     tests:[String],
     image:String,
     location:String,
-    certificate:[Strins]
+    certificate:[String]
 );
+var labpartner = mongoose.model('LabPartner',LabPartnerSchema);
+module.exports =labpartner;
