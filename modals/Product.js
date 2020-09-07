@@ -16,14 +16,24 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: [true, "A product must have a price"],
   },
-  discount: Number,
+  discount: {
+    type: Number,
+    default: 0,
+  },
   product_brand: {
     type: String,
     required: [true, "A product must have a brand"],
   },
-  description: String,
-  packing: String,
-  image: String,
+  description: {
+    type: String,
+  },
+  packing: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
 });
-var products = mongoose.model("Products", ProductSchema);
-module.exports = products;
+
+var Product = mongoose.model("Product", ProductSchema);
+module.exports = Product;

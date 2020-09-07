@@ -25,11 +25,25 @@ const MedicineSchema = new mongoose.Schema({
   packing: {
     type: String,
   },
-  discount: Number,
-  composition: String,
-  Brand_name: String,
-  image: String,
-  validated: Boolean,
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  composition: {
+    type: String,
+  },
+  Brand_name: {
+    type: String,
+    required: true,
+  },
+  image: {
+    type: String,
+  },
+  validated: {
+    type: Boolean,
+    default: false,
+  },
 });
-var medicines = mongoose.model("Medicines", MedicineSchema);
-module.exports = medicines;
+
+var Medicines = mongoose.model("Medicines", MedicineSchema);
+module.exports = Medicines;

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+var { ObjectId } = mongoose.Schema;
 
 const TestSchema = new mongoose.Schema({
   name: {
@@ -9,19 +10,35 @@ const TestSchema = new mongoose.Schema({
     maxlength: [40, "A test name must have less or equal then 40 characters"],
     minlength: [5, "A test name must have more or equal then 5 characters"],
   },
-  number_of_subtest: Number,
   price: {
     type: Number,
     required: [true, "A test must have a price"],
   },
-  Discount: Number,
-  labs: [String],
-  sub_tests: [String],
-  fasting_required: String,
-  sample_type: {
-    type: String,
-    required: [true, "A test must have a sample type"],
+  discount: {
+    type: Number,
+    default: 0,
   },
+  labs: [
+    {
+      type: ObjectId,
+      ref: "LabPartner",
+    },
+  ],
+  test: [
+    {
+      type: ObjectId,
+      ref: "Test",
+    },
+  ],
+  fastingRequired: {
+    type: String,
+  },
+  sampleType: [
+    {
+      type: String,
+    },
+  ],
 });
-var tests = mongoose.model("Tests", TestSchema);
-module.exports = tests;
+
+var Test = mongoose.model("Test", TestSchema);
+module.exports = Test;

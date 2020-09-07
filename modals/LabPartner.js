@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
 var { ObjectId } = mongoose.Schema;
+
+var { addressSchema } = require("./User");
+
 const LabPartnerSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -17,11 +20,20 @@ const LabPartnerSchema = new mongoose.Schema({
   },
   tests: {
     type: ObjectId,
-    ref: "",
+    ref: "Test",
   },
-  image: String,
-  location: String,
-  certificate: [String],
+  image: {
+    type: String,
+  },
+  location: {
+    type: addressSchema,
+  },
+  certificate: [
+    {
+      type: String,
+    },
+  ],
 });
-var labpartner = mongoose.model("LabPartner", LabPartnerSchema);
-module.exports = labpartner;
+
+var LabPartner = mongoose.model("LabPartner", LabPartnerSchema);
+module.exports = LabPartner;
