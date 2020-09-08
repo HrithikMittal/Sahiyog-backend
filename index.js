@@ -3,9 +3,16 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cookieParser= require('cookie-parser');
+const errorHandler= require('./middleware/error');
+const auth = require('./routes/auth');
+
+const labpartner=require('./routes/labpartner');
+
+
 var app = express();
-dotenv.config();
-var port = process.env.PORT;
+dotenv.config({path:'./config/config.env'});
+const PORT = process.env.PORT||9090;
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -19,14 +26,20 @@ mongoose
     console.log("Error in connecting to DB", err);
   });
 
+
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-var userRoute = require("./routes/User");
 
-app.use("/user", userRoute);
 
-app.listen(port, () => {
-  console.log(`🚀Server is listening on ${port}`);
+
+app.use('/',auth);
+app.use('/labpartner',labpartner)
+
+app.use(errorHandler);
+
+app.listen(PORT, () => {
+  console.log(`🚀Server is running on ${process.env.NODE_ENV} mode on  ${PORT}`);
 });
