@@ -13,7 +13,7 @@ mongoose
     useNewUrlParser: true,
   })
   .then(() => {
-    console.log("📦DB is connected successfully!");
+    console.log("📦 DB is connected successfully!");
   })
   .catch((err) => {
     console.log("Error in connecting to DB", err);
@@ -28,5 +28,5 @@ var userRoute = require("./routes/User");
 app.use("/user", userRoute);
 
 app.listen(port, () => {
-  console.log(`🚀Server is listening on ${port}`);
+  console.log(`🚀 Server is listening on ${port}`);
 });
