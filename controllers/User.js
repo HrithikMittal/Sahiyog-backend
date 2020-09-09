@@ -2,6 +2,7 @@ var User = require("../modals/User");
 
 var createUser = (req, res) => {
   var newUser = new User(req.body);
+
   newUser
     .save()
     .then((data) => {

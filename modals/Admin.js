@@ -1,34 +1,13 @@
 var mongoose = require("mongoose");
 const uuid = require("uuid");
 const crypto = require("crypto");
-var bcrypt = require("bcryptjs");
-var { ObjectId } = mongoose.Schema;
 
-var addressSchema = mongoose.Schema({
-  addr1: {
-    type: String,
-    required: true,
-  },
-  addr2: {
-    type: String,
-    required: true,
-  },
-  city: {
-    type: String,
-    required: true,
-  },
-  state: {
-    type: String,
-    required: true,
-  },
-  pinCode: {
-    type: Number,
-    required: true,
-  },
-});
-
-var userSchema = mongoose.Schema({
+var adminSchema = mongoose.Schema({
   name: {
+    type: String,
+    required: true,
+  },
+  username: {
     type: String,
     required: true,
   },
@@ -41,33 +20,10 @@ var userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  gender: {
-    type: String,
-  },
-  age: {
-    type: Number,
-    default: 1,
-  },
-  address: [
-    {
-      type: addressSchema,
-    },
-  ],
-  orders: [
-    {
-      type: ObjectId,
-      ref: "Order",
-    },
-  ],
-  prescription: [
-    {
-      type: String,
-    },
-  ],
 });
 
 // virtual field
-userSchema
+adminSchema
   .virtual("password")
   .set(function (password) {
     // create temporary variable called _password
@@ -82,7 +38,7 @@ userSchema
   });
 
 // methods
-userSchema.methods = {
+adminSchema.methods = {
   authenticate: function (plainText) {
     return this.encryptPassword(plainText) === this.hashed_password;
   },
@@ -100,5 +56,5 @@ userSchema.methods = {
   },
 };
 
-const User = mongoose.model("User", userSchema);
-module.exports = User;
+const Admin = mongoose.model("Admin", adminSchema);
+module.exports = Admin;
