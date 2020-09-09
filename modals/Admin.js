@@ -13,7 +13,6 @@ var adminSchema = mongoose.Schema({
   },
   phoneNo: {
     type: String,
-    required: true,
   },
   salt: String,
   hashed_password: {

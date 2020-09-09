@@ -1,7 +1,6 @@
 var mongoose = require("mongoose");
 const uuid = require("uuid");
 const crypto = require("crypto");
-var bcrypt = require("bcryptjs");
 var { ObjectId } = mongoose.Schema;
 
 var addressSchema = mongoose.Schema({

@@ -29,15 +29,15 @@ const login = (req, res) => {
       if (!admin) {
         return res.json({ error: "Admin doesn't exists wih this username" });
       }
-      const response = admin.match(req.body.password);
+      const response = admin.authenticate(req.body.password);
       if (!response) {
         return res.json({ error: "UnAuthorized Access!" });
       }
-      const token = jwt.sign({ _id: userRes._id }, process.env.JWT_SECRET);
+      const token = jwt.sign({ _id: admin._id }, process.env.JWT_SECRET);
 
       res.cookie("t", token, { expire: new Date() + 9999 });
-      userRes.hashed_password = undefined;
-      res.json({ token, userRes });
+      admin.hashed_password = undefined;
+      res.json({ token, admin });
     })
     .catch((err) => {
       console.log("error in login controller of admin ", err);
