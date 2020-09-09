@@ -9,6 +9,8 @@ router.delete(
   "/deletePartner/:labPartnerId",
   labPartnerController.deleteLabPartner
 );
+router.get("/getAllLabPartner", labPartnerController.getAllLabPartner);
+router.get("/getLabPartner/:labPartnerId", labPartnerController.getLabPartner);
 
 router.param("labPartnerId", labPartnerController.labPartnerById);
 
