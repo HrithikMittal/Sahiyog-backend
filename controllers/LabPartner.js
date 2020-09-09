@@ -49,9 +49,26 @@ const labPartnerById = (req, res, next, id) => {
   });
 };
 
+const getAllLabPartner = (req, res) => {
+  LabPartner.find()
+    .then((labs) => {
+      return res.json({ message: "get all partner successfully!", labs });
+    })
+    .catch((err) => {
+      console.log("Error in get all lab partner", err);
+      return res.json({ error: err });
+    });
+};
+
+const getLabPartner = (req, res) => {
+  return res.json(req.labPartner);
+};
+
 module.exports = {
   createLabPartner,
   labPartnerById,
   updateLabPartner,
   deleteLabPartner,
+  getAllLabPartner,
+  getLabPartner,
 };

@@ -49,9 +49,26 @@ const testById = (req, res, next, id) => {
   });
 };
 
+const getAllTest = (req, res) => {
+  Test.find()
+    .then((data) => {
+      return res.json({ data });
+    })
+    .catch((err) => {
+      console.log("Error in getting all test", err);
+      return res.json({ error: err });
+    });
+};
+
+const getTest = (req, res) => {
+  return res.json(req.test);
+};
+
 module.exports = {
   createTest,
   updateTest,
   deleteTest,
   testById,
+  getAllTest,
+  getTest,
 };
