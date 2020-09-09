@@ -3,14 +3,17 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+
 const app = express();
 dotenv.config();
+
 const port = process.env.PORT;
 
 mongoose
   .connect(process.env.MONGO_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
+    useCreateIndex: true,
   })
   .then(() => {
     console.log("📦 DB is connected successfully!");
