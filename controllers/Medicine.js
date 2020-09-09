@@ -1,5 +1,5 @@
 const _ = require("underscore");
-const Medicine = require("../modals/medicine");
+const Medicine = require("../modals/Medicine");
 
 const createMedicine = (req, res) => {
   var newMedicine = new Medicine(req.body);

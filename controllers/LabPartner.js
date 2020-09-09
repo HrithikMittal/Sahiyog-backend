@@ -29,7 +29,7 @@ const updateLabPartner = (req, res) => {
 };
 
 const deleteLabPartner = (req, res) => {
-  LabPartner.deleteOne({ name: req.body.name })
+  LabPartner.deleteOne({ _id: req.labPartner._id })
     .then((lab) => {
       return res.json({ message: "Lab Deleted successfully!", lab });
     })
