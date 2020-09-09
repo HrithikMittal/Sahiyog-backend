@@ -5,7 +5,7 @@ const medicineController = require("../controllers/Medicine");
 
 router.post("/createMedicine", medicineController.createMedicine);
 router.put("/updateMedicine/:medicineId", medicineController.updateMedicine);
-router.put("/deleteMedicine/:medicineId", medicineController.deleteMedicine);
+router.delete("/deleteMedicine/:medicineId", medicineController.deleteMedicine);
 
 router.param("medicineId", medicineController.medicineById);
 

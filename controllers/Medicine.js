@@ -11,7 +11,7 @@ const createMedicine = (req, res) => {
       newMedicine
         .save()
         .then((result) => {
-          return res.josn({
+          return res.json({
             message: "Medicine successfully added into DB.",
             result,
           });

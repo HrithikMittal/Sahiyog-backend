@@ -25,9 +25,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const userRoute = require("./routes/User");
 const adminRoute = require("./routes/Admin");
+const medicineRoute = require("./routes/Medicine");
 
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);
+app.use("/medicine", medicineRoute);
 
 app.listen(port, () => {
   console.log(`🚀 Server is listening on ${port}`);
