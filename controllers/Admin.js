@@ -47,4 +47,6 @@ const login = (req, res) => {
     });
 };
 
+const requireSignInAdmin = expressJwt({});
+
 module.exports = { signup, login };
