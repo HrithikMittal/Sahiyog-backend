@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 var { ObjectId } = mongoose.Schema;
 
-var { addressSchema } = require("./User");
-
 const LabPartnerSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -26,7 +24,7 @@ const LabPartnerSchema = new mongoose.Schema({
     type: String,
   },
   location: {
-    type: addressSchema,
+    type: String,
   },
   certificate: [
     {
