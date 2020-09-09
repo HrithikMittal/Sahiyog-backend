@@ -62,9 +62,26 @@ const medicineById = (req, res, next, id) => {
   });
 };
 
+const getAllMedicines = (req, res) => {
+  Medicine.find()
+    .then((medicine) => {
+      return res.json({ medicine });
+    })
+    .catch((err) => {
+      console.log("ERROr in getting all medicine controller", err);
+      res.json({ error: err });
+    });
+};
+
+const getMedicine = (req, res) => {
+  return res.json(req.medicine);
+};
+
 module.exports = {
   createMedicine,
   updateMedicine,
   deleteMedicine,
   medicineById,
+  getAllMedicines,
+  getMedicine,
 };
