@@ -12,7 +12,7 @@ const MedicineSchema = new mongoose.Schema({
     ],
     minlength: [5, "A medicine name must have more or equal then 5 characters"],
   },
-  rx_required: {
+  rxRequired: {
     type: Boolean,
     default: false,
   },
@@ -32,7 +32,7 @@ const MedicineSchema = new mongoose.Schema({
   composition: {
     type: String,
   },
-  Brand_name: {
+  brandName: {
     type: String,
     required: true,
   },

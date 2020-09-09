@@ -16,10 +16,12 @@ const signup = (req, res) => {
         })
         .catch((err) => {
           console.log("error in signup controller of admin ", err);
+          return res.json({ error: err });
         });
     })
     .catch((err) => {
       console.log("error in signup controller of admin ", err);
+      return res.json({ error: err });
     });
 };
 
@@ -41,6 +43,7 @@ const login = (req, res) => {
     })
     .catch((err) => {
       console.log("error in login controller of admin ", err);
+      return res.json({ error: err });
     });
 };
 
