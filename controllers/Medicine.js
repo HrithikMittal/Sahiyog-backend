@@ -2,29 +2,30 @@ const Medicine = require("../modals/Medicine");
 const _ = require("underscore");
 
 const createMedicine = (req, res) => {
-  var newMedicine = new Medicine(req.body);
-  Medicine.findOne({ name: req.body.name })
-    .then((medicine) => {
-      if (medicine) {
-        return res.json({ error: "Medicine already exists in database" });
-      }
-      newMedicine
-        .save()
-        .then((result) => {
-          return res.json({
-            message: "Medicine successfully added into DB.",
-            result,
-          });
-        })
-        .catch((err) => {
-          console.log("ERRor in creating medicine controller", err);
-          return res.json({ error: err });
-        });
-    })
-    .catch((err) => {
-      console.log("ERRor in creating medicine controller", err);
-      return res.json({ error: err });
-    });
+  return res.json({ message: "Hello World!" });
+  // var newMedicine = new Medicine(req.body);
+  // Medicine.findOne({ name: req.body.name })
+  //   .then((medicine) => {
+  //     if (medicine) {
+  //       return res.json({ error: "Medicine already exists in database" });
+  //     }
+  //     newMedicine
+  //       .save()
+  //       .then((result) => {
+  //         return res.json({
+  //           message: "Medicine successfully added into DB.",
+  //           result,
+  //         });
+  //       })
+  //       .catch((err) => {
+  //         console.log("ERRor in creating medicine controller", err);
+  //         return res.json({ error: err });
+  //       });
+  //   })
+  //   .catch((err) => {
+  //     console.log("ERRor in creating medicine controller", err);
+  //     return res.json({ error: err });
+  //   });
 };
 
 // const updateMedicine = (req, res) => {
