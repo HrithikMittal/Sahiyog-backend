@@ -16,8 +16,18 @@ router.post(
   medicineOrderController.createProductOrder
 );
 
+router.put(
+  "/updateMedicineOrder/:medicineOrderId",
+  medicineOrderController.updateMedicineOrder
+);
+router.put(
+  "/updateProductOrder/:medicineOrderId",
+  medicineOrderController.updateMedicineOrder
+);
+
 router.param("userId", userController.userById);
 router.param("medicineId", medicineController.medicineById);
 router.param("productId", productController.productById);
+router.param("medicineOrderId", medicineOrderController.medicineOrderById);
 
 module.exports = router;
