@@ -42,6 +42,11 @@ app.use("/product", productRoute);
 app.use("/test", testRoute);
 app.use("/package", packageRoute);
 
+var data = require("./docs/home.json");
+app.get("/", (req, res) => {
+  res.send(data);
+});
+
 app.listen(port, () => {
   console.log(`🚀 Server is listening on ${port}`);
 });
