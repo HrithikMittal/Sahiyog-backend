@@ -1,4 +1,4 @@
-const Package = require("../modals/Medicine");
+const Check = require("../modals/Medicine");
 // const _ = require("underscore");
 
 // const createMedicine = (req, res) => {

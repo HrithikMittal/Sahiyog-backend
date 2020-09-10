@@ -49,7 +49,7 @@
 const mongoose = require("mongoose");
 var { ObjectId } = mongoose.Schema;
 
-const PackageSchema = new mongoose.Schema({
+const checkSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "A test must have a name"],
@@ -66,5 +66,5 @@ const PackageSchema = new mongoose.Schema({
   ],
 });
 
-var Package = mongoose.model("Package", PackageSchema);
-module.exports = Package;
+var Check = mongoose.model("Check", checkSchema);
+module.exports = Check;
