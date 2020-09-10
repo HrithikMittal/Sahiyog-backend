@@ -78,11 +78,11 @@ const Medicine = require("../modals/Medicine");
 //   return res.json(req.medicine);
 // };
 
-// module.exports = {
-//   createMedicine,
-// updateMedicine,
-// deleteMedicine,
-// medicineById,
-// getAllMedicines,
-// getMedicine,
-// };
+module.exports = {
+  //   createMedicine,
+  // updateMedicine,
+  // deleteMedicine,
+  // medicineById,
+  // getAllMedicines,
+  // getMedicine,
+};
