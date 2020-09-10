@@ -1,5 +1,5 @@
 const _ = require("underscore");
-const Package = require("../modals/Package");
+const Package = require("../models/Package");
 
 const createPackage = (req, res) => {
   var newPackage = new Package(req.body);
