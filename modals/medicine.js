@@ -1,17 +1,17 @@
 const mongoose = require("mongoose");
 
 var medicineSchema = mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "A medicine must have a name"],
-    unique: true,
-    trim: true,
-    maxlength: [
-      40,
-      "A medicine name must have less or equal then 40 characters",
-    ],
-    minlength: [5, "A medicine name must have more or equal then 5 characters"],
-  },
+  // name: {
+  //   type: String,
+  //   required: [true, "A medicine must have a name"],
+  //   unique: true,
+  //   trim: true,
+  //   maxlength: [
+  //     40,
+  //     "A medicine name must have less or equal then 40 characters",
+  //   ],
+  //   minlength: [5, "A medicine name must have more or equal then 5 characters"],
+  // },
   rxRequired: {
     type: Boolean,
     default: false,
