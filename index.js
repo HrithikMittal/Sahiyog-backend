@@ -30,17 +30,17 @@ const userRoute = require("./routes/User");
 const adminRoute = require("./routes/Admin");
 // const medicineRoute = require("./routes/Medicine");
 const labPartnerRoute = require("./routes/LabPartner");
-// const productRoute = require("./routes/Product");
-// const testRoute = require("./routes/Test");
-// const packageRoute = require("./routes/Package");
+const productRoute = require("./routes/Product");
+const testRoute = require("./routes/Test");
+const packageRoute = require("./routes/Package");
 
 app.use("/user", userRoute);
 app.use("/admin", adminRoute);
 // app.use("/medicine", medicineRoute);
 app.use("/labpartner", labPartnerRoute);
-// app.use("/product", productRoute);
-// app.use("/test", testRoute);
-// app.use("/package", packageRoute);
+app.use("/product", productRoute);
+app.use("/test", testRoute);
+app.use("/package", packageRoute);
 
 var data = require("./docs/home.json");
 app.get("/", (req, res) => {
