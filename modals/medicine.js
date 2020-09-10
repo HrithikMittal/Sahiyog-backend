@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var MedicineSchema = mongoose.Schema({
+var medicineSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "A medicine must have a name"],
@@ -16,7 +16,6 @@ var MedicineSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
-
   price: {
     type: Number,
     required: true,
@@ -45,5 +44,5 @@ var MedicineSchema = mongoose.Schema({
   },
 });
 
-var Medicine = mongoose.model("Medicine", MedicineSchema);
+const Medicine = mongoose.model("Medicine", medicineSchema);
 module.exports = Medicine;
