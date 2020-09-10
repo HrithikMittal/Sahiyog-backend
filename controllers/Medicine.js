@@ -1,5 +1,5 @@
-const Medicine = require("../modals/Medicine");
-const _ = require("underscore");
+// const Medicine = require("../modals/Medicine");
+// const _ = require("underscore");
 
 const createMedicine = (req, res) => {
   return res.json({ message: "Hello World!" });
