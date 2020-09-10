@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var MedicineSchema = new mongoose.Schema({
+var MedicineSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "A medicine must have a name"],
