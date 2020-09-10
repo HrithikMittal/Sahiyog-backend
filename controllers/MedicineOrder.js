@@ -1,4 +1,4 @@
-const MedicineOrder = require("../modals/MedicineOrder");
+const MedicineOrder = require("../models/MedicineOrder");
 
 const createMedicineOrder = (req, res) => {
   var newMedicineOrder = new MedicineOrder(req.body);

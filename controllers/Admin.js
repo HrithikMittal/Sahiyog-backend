@@ -1,4 +1,4 @@
-var Admin = require("../modals/Admin");
+var Admin = require("../models/Admin");
 var expressJwt = require("express-jwt");
 const jwt = require("jsonwebtoken");
 

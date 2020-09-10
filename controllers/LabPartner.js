@@ -1,5 +1,5 @@
 var _ = require("underscore");
-const LabPartner = require("../modals/LabPartner");
+const LabPartner = require("../models/LabPartner");
 
 const createLabPartner = (req, res) => {
   const newLab = new LabPartner(req.body);

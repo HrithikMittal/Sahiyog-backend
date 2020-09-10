@@ -1,5 +1,5 @@
 const _ = require("underscore");
-const Test = require("../modals/Test");
+const Test = require("../models/Test");
 
 const createTest = (req, res) => {
   const newTest = new Test(req.body);

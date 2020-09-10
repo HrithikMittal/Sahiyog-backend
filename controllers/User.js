@@ -1,4 +1,4 @@
-var User = require("../modals/User");
+var User = require("../models/User");
 var expressJwt = require("express-jwt");
 const jwt = require("jsonwebtoken");
 
