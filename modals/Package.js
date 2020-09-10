@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 var { ObjectId } = mongoose.Schema;
 
-const TestSchema = new mongoose.Schema({
+const PackageSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "A test must have a name"],
@@ -10,29 +10,13 @@ const TestSchema = new mongoose.Schema({
     maxlength: [40, "A test name must have less or equal then 40 characters"],
     minlength: [5, "A test name must have more or equal then 5 characters"],
   },
-  price: {
-    type: Number,
-    required: [true, "A test must have a price"],
-  },
-  discount: {
-    type: Number,
-    default: 0,
-  },
-  labs: [
+  tests: [
     {
       type: ObjectId,
       ref: "LabPartner",
     },
   ],
-  fastingRequired: {
-    type: String,
-  },
-  sampleType: [
-    {
-      type: String,
-    },
-  ],
 });
 
-var Test = mongoose.model("Test", TestSchema);
-module.exports = Test;
+var Package = mongoose.model("Package", PackageSchema);
+module.exports = Package;

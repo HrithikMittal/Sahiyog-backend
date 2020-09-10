@@ -47,6 +47,16 @@ const login = (req, res) => {
     });
 };
 
+const userById = (req, res, next, id) => {
+  User.findOne({}).exec((err, user) => {
+    if (!user || err) {
+      res.json({ error: "NO USER FOUND!" });
+    }
+    req.user = user;
+    next();
+  });
+};
+
 // const requireSignInUser = expressJwt({});
 
-module.exports = { signup, login };
+module.exports = { signup, login, userById };
