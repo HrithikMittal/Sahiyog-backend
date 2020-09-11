@@ -1,5 +1,33 @@
 {
   "/": "GET: all the APIs",
 
-  "/user/signup": "POST: create account as user"
+  "/user/signup": "POST: create account as user",
+  "/user/login": "POST: login as a user",
+
+  "/admin/signup": "POST: create account as admin",
+  "/admin/login": "POST: login as a user",
+
+  "/medicine/createMedicine": "POST: create Medicine",
+  "/medicine/updateMedicine/:medicineId": "PUT: update existing medicine",
+  "/medicine/deleteMedicine/:medicineId": "DELETE: delete medicine",
+  "/medicine/getAllMedicines": "GET: get all the medicines",
+  "/medicine/getMedicine/:medicineId": "GET: particular Medicine details",
+
+  "/labpartner/createLab": "POST: create new Lab",
+  "/labpartner/updateLab/:labPartnerId": "PUT: update the details of lab partners",
+  "/labpartner/deletePartner/:labPartnerId": "DELETE: delete lab partner",
+  "/labpartner/getAllLabPartner": "GET :all lab partners",
+  "/labpartner/getLabPartner/:labPartnerId": "GET: particular lab partner details",
+
+  "/product/createProduct": "POST: create product",
+  "/product/updateProduct/:productId": "PUT: updtae the product",
+  "/product/deleteProduct/:productId": "DELETE: delete product",
+  "/product/getAllProducts": "GET: all the products",
+  "/product/getProduct/:productId": "Get: particular product",
+
+  "test/createTest": "POST: create test",
+  "test/updateTest/:testId": "PUT: update the test",
+  "test/deleteTest/:testId": "DELETE: delte the test",
+  "test/getAllTest": "GET: all the test",
+  "test/getTest/:testId": "GET: particular test"
 }
