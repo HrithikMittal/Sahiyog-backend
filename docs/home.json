@@ -25,9 +25,14 @@
   "/product/getAllProducts": "GET: all the products",
   "/product/getProduct/:productId": "Get: particular product",
 
-  "test/createTest": "POST: create test",
-  "test/updateTest/:testId": "PUT: update the test",
-  "test/deleteTest/:testId": "DELETE: delte the test",
-  "test/getAllTest": "GET: all the test",
-  "test/getTest/:testId": "GET: particular test"
+  "/test/createTest": "POST: create test",
+  "/test/updateTest/:testId": "PUT: update the test",
+  "/test/deleteTest/:testId": "DELETE: delte the test",
+  "/test/getAllTest": "GET: all the test",
+  "/test/getTest/:testId": "GET: particular test",
+
+  "/createMedicineOrder/:userId/:medicineId": "POST: create medicine order",
+  "/createProductOrder/:userId/:productId": "POST: create product order",
+  "/updateMedicineOrder/:medicineOrderId": "PUT: update medicine order schema",
+  "/updateProductOrder/:medicineOrderId": "PUT update product order schema"
 }
