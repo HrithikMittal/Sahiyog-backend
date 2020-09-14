@@ -55,9 +55,34 @@ const medicineOrderById = (req, res, next, id) => {
   });
 };
 
+const getAllOrders = (req, res) => {
+  MedicineOrder.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log("ERROR in updating product order", err);
+      res.json({ error: err });
+    });
+};
+
+const getOrder = (req, res) => {
+  MedicineOrder.findOne(req.medicineOrder._id)
+    .populate("medicine product")
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log("ERROR in updating product order", err);
+      res.json({ error: err });
+    });
+};
+
 module.exports = {
   createMedicineOrder,
   createProductOrder,
   updateMedicineOrder,
   medicineOrderById,
+  getAllOrders,
+  getOrder,
 };

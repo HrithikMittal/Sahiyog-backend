@@ -26,6 +26,9 @@ router.put(
   medicineOrderController.updateMedicineOrder
 );
 
+router.get("/getAllOrders", medicineOrderController.getAllOrders);
+router.get("/getOrder/:medcineOrderId", medicineOrderController.getOrder);
+
 router.param("userId", userController.userById);
 router.param("medicineId", medicineController.medicineById);
 router.param("productId", productController.productById);

@@ -31,8 +31,10 @@
   "/test/getAllTest": "GET: all the test",
   "/test/getTest/:testId": "GET: particular test",
 
-  "/createMedicineOrder/:userId/:medicineId": "POST: create medicine order",
+  "/order/createMedicineOrder/:userId/:medicineId": "POST: create medicine order",
   "/createProductOrder/:userId/:productId": "POST: create product order",
   "/updateMedicineOrder/:medicineOrderId": "PUT: update medicine order schema",
-  "/updateProductOrder/:medicineOrderId": "PUT update product order schema"
+  "/updateProductOrder/:medicineOrderId": "PUT update product order schema",
+  "/getAllOrders": "GET: all the orders",
+  "/getOrder/:medcineOrderId": "GET: the particular order"
 }
